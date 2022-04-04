@@ -1,0 +1,48 @@
+﻿@model IEnumerable<RentDetailViewModel>
+
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Flat_Name</th>
+            <th>Guest_Name</th>
+
+            <th>Amount</th>
+            <th>Availability</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var items in Model)
+        {
+            <tr>
+                <td>@items.Id</td>
+                <td>@items.Flat_Name</td>
+                <td>@items.Guest_Name</td>
+                <td>@items.Amount</td>
+                <td>@items.Availability</td>
+                @{
+                    if (items.Status == false)
+                    {
+                        <td>
+                            <a asp-controller="Rent" asp-action="Edit" asp-route-id="@items.Id" class="btn btn-success">Add Costumer</a>
+                        </td>
+                    }
+                    else
+                    {
+
+                        <td>
+                        <a asp-controller="Rent" asp-action="Edit" asp-route-id="@items.Id" class="btn btn-success disabled">Add Costumer</a>
+                        
+                        </td>
+                    }
+                }
+
+
+
+
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<LandDetailViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Location</th>
+            <th>Area</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var items in Model)
+        {
+            <tr>
+                <td>@items.Id</td>
+                <td>@items.Location</td>
+                <td>@items.Area</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

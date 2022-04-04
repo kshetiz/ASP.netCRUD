@@ -1,0 +1,11 @@
+﻿@model StaffViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-controller="Staff" asp-action="StaffPost" method="post">
+    <input type="text" asp-for="Name" placeholder="Enter your name" />
+    <input type="text" asp-for="Age" placeholder="Enter your age" />
+    <button type="submit" class="btn btn-primary btn-sm">Create</button>
+</form>
+
